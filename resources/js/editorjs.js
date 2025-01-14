@@ -13,7 +13,12 @@ window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, 
         data: null,
 
         initEditor() {
-            //this.data = this.$wire.get(dataProperty);
+
+            if(!this.$wire){
+                return;
+            }
+
+            this.data = this.$wire.get(dataProperty);
 
             this.instance = new EditorJS({
                 holder: editorId,
@@ -78,7 +83,7 @@ window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, 
                     quote: Quote
                 },
 
-                //data: this.data,
+                data: this.data,
 
                 onChange: () => {
                     this.instance.save().then((outputData) => {
