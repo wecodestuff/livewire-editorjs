@@ -4,7 +4,7 @@ namespace Maxeckel\LivewireEditorjs\Http\Livewire;
 
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
-use Livewire\TemporaryUploadedFile;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
 
 class EditorJS extends Component
