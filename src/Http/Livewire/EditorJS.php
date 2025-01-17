@@ -87,9 +87,8 @@ class EditorJS extends Component
             $this->uploadDisk
         );
 
-        $this->dispatch($eventName, [
-            'url' => Storage::disk($this->uploadDisk)->url($storedFileName),
-        ]);
+        $this->dispatch($eventName, url: Storage::disk($this->uploadDisk)->url($storedFileName));
+
     }
 
     public function loadImageFromUrl(string $url)
